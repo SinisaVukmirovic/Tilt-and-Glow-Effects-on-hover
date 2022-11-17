@@ -1,0 +1,56 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    background-color: #111;
+}
+
+main {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    place-items: center;
+    grid-gap: 1rem;
+    padding: 1rem;
+    background-color: #333;
+}
+
+.card {
+    width: 15rem;
+    height: 20rem;
+    background-color: #222;
+}
+    .card-img {        
+        height: 100%;
+        display: grid;
+        place-items: center;
+    }
+    .card-img img {
+        width: 100%;
+    }
+
+
+
+
+
+
+
+
+/* .tilt {
+    transition: all 0.1s ease;
+    cursor: pointer;
+}
+    .tilt:hover {
+        scale: 1.05;
+    }
+
+.card {
+    width: 300px;
+    height: 400px;
+    background-color: crimson;
+} */
