@@ -20,10 +20,20 @@ main {
     background-color: #333;
 }
 
+main:hover > .card > .card-border {
+    opacity: 1;
+}
+
 .card {
     width: 15rem;
     height: 20rem;
-    background-color: #222;
+    background-color: rgba(255, 255, 255, .2);
+    border: 2px solid rgba(255, 255, 255, .2);
+    cursor: pointer;
+
+    position: relative;
+    transition: transform 100ms ease-in-out;
+    
 }
     .card-img {        
         height: 100%;
@@ -33,6 +43,47 @@ main {
     .card-img img {
         width: 100%;
     }
+
+    .card::before,
+    .card-border {
+        content: '';
+        position: absolute;
+        inset: 0;
+        z-index: 2;
+        opacity: 0;
+    }
+    .card::before {
+        background: radial-gradient(
+            500px circle at var(--mouseX) var(--mouseY),
+            rgba(255, 255, 255, .2),
+            transparent 40%
+        );
+        z-index: 3;
+    }
+    .card > .card-border {
+        background: radial-gradient(
+            500px circle at var(--mouseX) var(--mouseY),
+            rgba(255, 255, 255, .8),
+            transparent 40%
+        );
+        z-index: 2;
+    }
+
+    .card:hover::before {
+        opacity: 1;
+    }
+
+    .card > .card-img {
+        width: calc(100% - 4px);
+        height: calc(100% - 4px);
+        background-color: #222;
+        /* background-color: var(--card-clr); */
+        margin: 2px;
+        position: relative;
+    }
+
+
+
 
 
 
