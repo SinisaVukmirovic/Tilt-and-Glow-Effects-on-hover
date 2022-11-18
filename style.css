@@ -1,7 +1,7 @@
 * {
-    padding: 0;
-    margin: 0;
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
@@ -9,6 +9,7 @@ body {
     display: grid;
     place-items: center;
     background-color: #111;
+    overflow: hidden;
 }
 
 main {
@@ -16,8 +17,8 @@ main {
     grid-template-columns: repeat(2, 1fr);
     place-items: center;
     grid-gap: 1rem;
-    padding: 1rem;
-    background-color: #333;
+    /* padding: 1rem; */
+    /* background-color: #333; */
     /* perspective: 1500px; */
 }
 
@@ -28,14 +29,16 @@ main:hover > .card > .card-border {
 .card {
     width: 15rem;
     height: 20rem;
-    background-color: rgba(255, 255, 255, .2);
-    border: 2px solid rgba(255, 255, 255, .2);
+    background-color: rgba(255, 255, 255, .1);
+    border: 1px solid rgba(255, 255, 255, .2);
+    /* border: 2px solid rgba(255, 255, 255, .2); */
     cursor: pointer;
 
     position: relative;
     transition: transform 100ms ease-in-out;
 }
-    .card-img {        
+    .card-img {
+        width: 100%;   
         height: 100%;
         display: grid;
         place-items: center;
@@ -51,57 +54,39 @@ main:hover > .card > .card-border {
         inset: 0;
         z-index: 2;
         opacity: 0;
+        transition: opacity 500ms linear;
     }
     .card::before {
         background: radial-gradient(
             500px circle at var(--mouseX) var(--mouseY),
-            rgba(255, 255, 255, .2),
+            rgba(255, 255, 255, .1),
             transparent 40%
         );
         z-index: 3;
     }
     .card > .card-border {
         background: radial-gradient(
-            500px circle at var(--mouseX) var(--mouseY),
-            rgba(255, 255, 255, .8),
+            300px circle at var(--mouseX) var(--mouseY),
+            rgba(255, 255, 255, .4),
             transparent 40%
         );
-        z-index: 2;
+        z-index: 1;
     }
+
+    /* .card:hover > .card-img img {
+        filter: drop-shadow(0 0 1px #fff);
+    } */
 
     .card:hover::before {
         opacity: 1;
     }
 
     .card > .card-img {
-        width: calc(100% - 4px);
-        height: calc(100% - 4px);
+        width: calc(100% - 2px);
+        height: calc(100% - 2px);
         background-color: #222;
         /* background-color: var(--card-clr); */
-        margin: 2px;
+        margin: 1px;
         position: relative;
+        z-index: 2;
     }
-
-
-
-
-
-
-
-
-
-
-
-/* .tilt {
-    transition: all 0.1s ease;
-    cursor: pointer;
-}
-    .tilt:hover {
-        scale: 1.05;
-    }
-
-.card {
-    width: 300px;
-    height: 400px;
-    background-color: crimson;
-} */
