@@ -1,7 +1,11 @@
 import { main, cards } from './DOMelems.js';
 
 export default function glowOnHover(e) {
-    main.style.border = '2px solid red'
+    for (const card of cards) {
+        const rect = card.getBoundingClientRect();
+        // const x = e.clientX - rect.left
+        console.log(rect.left)
+    }
 }
 
 main.addEventListener('mousemove', glowOnHover);
