@@ -7,8 +7,9 @@ cards.forEach(card => {
     const width = card.clientWidth;
 
     card.addEventListener('mousemove', (e) => {
-        const x = e.layerX;
-        const y = e.layerY;
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
 
         const multiplier = 10;
 
