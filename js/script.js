@@ -1,25 +1,29 @@
-const cards = document.querySelectorAll('.card')
+// import { main, cards } from './DOMelems.js';
+import './tilting.js';
+import glowOnHover from './glow.js';
 
-const tiltMove = (x, y) => `perspective(500px) rotateX(${x}deg) rotateY(${y}deg)`;
+// const cards = document.querySelectorAll('.card');
 
-cards.forEach(card => {
-    const height = card.clientHeight;
-    const width = card.clientWidth;
+// const tiltMove = (x, y) => `perspective(500px) rotateX(${x}deg) rotateY(${y}deg)`;
 
-    card.addEventListener('mousemove', (e) => {
-        const x = e.layerX;
-        const y = e.layerY;
+// cards.forEach(card => {
+//     const height = card.clientHeight;
+//     const width = card.clientWidth;
 
-        const multiplier = 10;
+//     card.addEventListener('mousemove', (e) => {
+//         const x = e.layerX;
+//         const y = e.layerY;
 
-        const xRotate = -multiplier * ((y - width / 2) / width);
-        const yRotate = multiplier * ((x - height / 2) / height * 2.25);
+//         const multiplier = 10;
 
-        card.style.transform = tiltMove(xRotate, yRotate);
-    })
+//         const xRotate = -multiplier * ((y - width / 2) / width);
+//         const yRotate = multiplier * ((x - height / 2) / height * 2.25);
 
-    card.addEventListener('mouseout', () => card.style.transform = tiltMove(0, 0));
-})
+//         card.style.transform = tiltMove(xRotate, yRotate);
+//     })
+
+//     card.addEventListener('mouseout', () => card.style.transform = tiltMove(0, 0));
+// })
 
 
 

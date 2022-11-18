@@ -18,6 +18,7 @@ main {
     grid-gap: 1rem;
     padding: 1rem;
     background-color: #333;
+    /* perspective: 1500px; */
 }
 
 main:hover > .card > .card-border {
@@ -33,7 +34,6 @@ main:hover > .card > .card-border {
 
     position: relative;
     transition: transform 100ms ease-in-out;
-    
 }
     .card-img {        
         height: 100%;
