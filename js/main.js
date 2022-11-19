@@ -20,5 +20,6 @@ let i = 0;
 cards.forEach(card => {
     const img = card.querySelector('.card-img img');
     img.src = `${imgSrc[i]}`;
-    i++
+    i++;
 });
+// attemps to dynamically add entire card elem and then target and select them with JS failed...
