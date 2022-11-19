@@ -1,8 +1,8 @@
 :root {
-    --bg-clr: #111;
+    --bg-clr: #010101;
     --card-bg-clr: rgba(255, 255, 255, .1);
     --card-border: 1px solid rgba(255, 255, 255, .4);
-    --card-img-bg: #222;
+    --card-img-bg: #121212;
     --before-rad-grad: radial-gradient(
                             30rem circle at var(--mouseX) var(--mouseY),
                             rgba(255, 255, 255, .1),
@@ -31,7 +31,8 @@ body {
 
 main {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    /* grid-template-columns: repeat(2, 1fr); */
     place-items: center;
     grid-gap: 1rem;
 }
@@ -49,6 +50,7 @@ main:hover > .card > .card-border {
 
     position: relative;
     transition: transform 100ms ease-in-out;
+    transition: scale 500ms ease-in-out;
 }
     .card-img {
         width: 100%;   
@@ -92,6 +94,9 @@ main:hover > .card > .card-border {
 
     .card:hover::before {
         opacity: 1;
+    }
+    .card:hover {
+        scale: 1.05;
     }
 
     .card > .card-img {
