@@ -1,18 +1,18 @@
 :root {
     --bg-clr: #010101;
     --card-bg-clr: rgba(255, 255, 255, .1);
-    --card-border: 1px solid rgba(255, 255, 255, .4);
+    --card-border: 1px solid rgba(255, 255, 255, .2);
     --card-img-bg: #121212;
-    --before-rad-grad: radial-gradient(
+    /* --before-rad-grad: radial-gradient(
                             30rem circle at var(--mouseX) var(--mouseY),
                             rgba(255, 255, 255, .3),
                             transparent 40%
-                        );
-    --border-rad-grad: radial-gradient(
+                        ); */
+    /* --border-rad-grad: radial-gradient(
                             25rem circle at var(--mouseX) var(--mouseY),
                             rgba(255, 255, 255, 1),
                             transparent 40%
-                        );
+                        ); */
 }
 
 * {
@@ -49,11 +49,11 @@ main:hover > .card > .card-border {
     cursor: pointer;
 
     position: relative;
-    transition: transform 100ms ease-in-out;
-    transition: scale 500ms ease-in-out;
+    transition: transform 100ms ease-in-out, scale 500ms ease-in-out;
+    /* transition: scale 500ms ease-in-out; */
 }
     .card-img {
-        width: 100%;   
+        width: 100%;
         height: 100%;
         display: grid;
         place-items: center;
@@ -75,7 +75,7 @@ main:hover > .card > .card-border {
     .card::before {
         background: radial-gradient(
             30rem circle at var(--mouseX) var(--mouseY),
-            rgba(255, 255, 255, .2),
+            rgba(255, 255, 255, .1),
             transparent 40%
         );
         z-index: 3;
@@ -103,7 +103,6 @@ main:hover > .card > .card-border {
         width: calc(100% - 2px);
         height: calc(100% - 2px);
         background-color: var(--card-img-bg);
-        /* background-color: var(--card-clr); */
         margin: 1px;
         position: relative;
         z-index: 2;
