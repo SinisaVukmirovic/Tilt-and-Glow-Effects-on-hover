@@ -1,6 +1,5 @@
 import './tilting.js';
 import glowOnHover from './glow.js';
-
 import { cards } from './DOMelems.js';
 
 const images = {
@@ -16,30 +15,10 @@ const images = {
     10: 'https://cdn.cloudflare.steamstatic.com/apps/dota2/videos/dota_react/heroes/renders/skeleton_king.png'
 }
 
-// cards.forEach(card => {
-//     const cardImg = card.querySelector('.card-img img');
-// });
-
-const imgsInObj = Object.getOwnPropertyNames(images);
-
-// for (let i = 1; i <= imgsInObj.length; i++) {
-//     const cardImg${i} = cards.querySelector('.card .card-img img');
-
-//     cardImg.forEach(card => {
-//         card.src = images.i;
-//     });
-// }
-
-let i = 1;
-console.log(imgsInObj.length)
-
+const imgSrc = Object.values(images)
+let i = 0;
 cards.forEach(card => {
     const img = card.querySelector('.card-img img');
-    // img.src = images[i];
-    if (i > imgsInObj.length) {
-        return;
-    }
+    img.src = `${imgSrc[i]}`;
     i++
-    // console.log(i)
-    img.src = images[i];
 });

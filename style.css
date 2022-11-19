@@ -5,11 +5,11 @@
     --card-img-bg: #121212;
     --before-rad-grad: radial-gradient(
                             30rem circle at var(--mouseX) var(--mouseY),
-                            rgba(255, 255, 255, .1),
+                            rgba(255, 255, 255, .3),
                             transparent 40%
                         );
     --border-rad-grad: radial-gradient(
-                            20rem circle at var(--mouseX) var(--mouseY),
+                            25rem circle at var(--mouseX) var(--mouseY),
                             rgba(255, 255, 255, 1),
                             transparent 40%
                         );
@@ -31,7 +31,7 @@ body {
 
 main {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     /* grid-template-columns: repeat(2, 1fr); */
     place-items: center;
     grid-gap: 1rem;
@@ -60,6 +60,7 @@ main:hover > .card > .card-border {
     }
     .card-img img {
         width: 100%;
+        transition: filter 400ms ease-in-out;
     }
 
     .card::before,
@@ -88,16 +89,15 @@ main:hover > .card > .card-border {
         z-index: 1;
     }
 
-    /* .card:hover > .card-img img {
-        filter: drop-shadow(0 0 1px #fff);
-    } */
-
     .card:hover::before {
         opacity: 1;
     }
     .card:hover {
         scale: 1.05;
-    }
+    }   
+        .card:hover > .card-img img {
+            filter: drop-shadow(0 0 2px #ccc);
+        }
 
     .card > .card-img {
         width: calc(100% - 2px);
